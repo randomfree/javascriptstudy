@@ -3,15 +3,55 @@
   <head>
     <meta charset="utf-8">
     <title>创建变量和数组</title>
+    <script type="text/javascript">
+
+        function testType(){
+          var text = document.getElementById("inputType").value;
+          // 这么做是不行的检测什么都是string
+          alert(typeof text);
+
+        }
+    </script>
   </head>
   <body>
     <script type="text/javascript">
         var x = 10
         var y = 3
         var z = x / y
-        document.write(z)
+        document.write(z+"<br />")
+
+        // 数组
+        var cars = new Array()
+        cars[0] = "Audi"
+        cars[1] = "BMW"
+        cars[2] = "Volvo"
+        document.write(cars+"<br />")
+
+        var cars = new Array("Audi","BMW","Volvo");
+        document.write(cars+"<br />")
+
+        var cars = ["Audi","BMW","Volvo"];
+        document.write(cars+"<br />")
+        // 定义一个对象
+        var person = {firstname:"bill",lastname:"Gates",id:11}
+        // 这样输出是没用的
+        document.write(person+"<br />")
+        // 要这样输出
+        document.write(person.firstname+"<br />")
+        document.write(person.lastname+"<br />")
+        document.write(person.id+"<br />")
+        var int = 1.0;
+        var str = "str"
+        document.write("1的类型是: "+typeof int+"<br />")
+        document.write("str的类型是: "+typeof str+"<br />")
+        document.write("person的类型是: "+typeof person+"<br />")
 
     </script>
+    <!-- typeof 用于检测变量的值和类型 5种基本类型，undefined,null,number,string,boolean -->
+    <!-- 这么做是不行的检测什么都是string -->
+    <input type="text" id="inputType"/>
+    <button type="button" onclick="testType()">检测</button>
+    <p id = "showtype"></p>
 
   </body>
 </html>
