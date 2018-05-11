@@ -88,6 +88,14 @@
             $("#btn_chaining").click(function () {
                 $("#p_chaining").slideUp().slideDown();
             });
+
+            $("#ajax").click(function(){
+                $("#div_ajax").load("http://127.0.0.1:8080/",function(responseTxt,statusTxt,xhr){
+                    console.log("responseTxt:"+responseTxt);
+                    console.log("statusTxt:"+statusTxt);
+                    console.log("xhr:"+xhr);
+                });
+            });
         });
     </script>
     
@@ -121,5 +129,7 @@
     <button id="btn_stop">停止动画</button>
     <button id="btn_chaining">链接</button>
     <p id="p_chaining" style="height: 50px; width: 50px;text-align: center;background-color: aqua;border: solid 1px black;">链接</p>
+    <button id="ajax">ajax</button>
+    <div id="div_ajax"></div>
 </body>
 </html>
