@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>jquery</title>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#click").click(function(){
+                $(this).hide();
+            });
+            
+            $("#dblclick").dblclick(function(){
+                $(this).hide();
+            });
+
+            $("#mouseenter").mouseenter(function(){
+                $(this).hide();
+            });
+            $("#mouseleave").mouseleave(function(){
+                $(this).hide();
+            });
+
+            $("#mousedown").mousedown(function(){
+               alert("mousedown");
+
+            });
+
+            $("#mouseup").mouseup(function(){
+                alert("mouseup");
+
+            });
+
+            $("#hover").hover(function(){
+                console.log("你进来了");
+            },function(){
+                console.log("你又走啦");
+            });
+
+            $("#btn_show").click(function(){
+                $("#p_show").show(1000,function(){
+                    console.log("show完了有回调哦");
+                });
+                
+            });
+            $("#btn_hide").click(function(){
+                $("#p_hide").hide(1000,function(){
+                    console.log("hide也有回调");
+                });
+            });
+            
+            $("#btn_toggle").click(function(){
+                $("#p_toggle").toggle(1000,function(){
+                    console.log("toggle回调");
+                });
+            });
+
+            $("#fade").click(function(){
+                $("#p_fadein").fadeIn();
+                $("#p_fadeout").fadeOut();
+                $("#p_fadetoggle").fadeToggle();
+                $("#p_fadeto").fadeTo("fast",0.15);
+            });
+
+            $("#btn_slide").click(function(){
+                $("#p_slidedown").slideDown();
+                $("#p_slideup").slideUp();
+                $("#p_slidetoggle").slideToggle(1000,function(){
+                    console.log("也可以加时间和回调");
+                });
+            });
+
+            $("#btn_animate").click(function(){
+                $("#p_animate").animate({
+                    left:'200px',
+                    marginTop:'20px',
+                    height:'80px',
+                    width:'30px'
+
+                },3000,function(){
+                    console.log("animate_callback");
+                });
+            });
+
+            $("#btn_stop").click(function(){
+                $("p_animate").stop();
+            });
+            $("#btn_chaining").click(function () {
+                $("#p_chaining").slideUp().slideDown();
+            });
+        });
+    </script>
+    
+</head>
+<body>
+    <p id="click">单击消失</p>
+    <p id="dblclick">双击消失</p>
+    <p id="mouseenter">鼠标移动到元素上</p>
+    <p id="mouseleave">鼠标移走</p>
+    <p id="mousedown">鼠标按下</p>
+    <p id="mouseup">鼠标按下后的抬起</p>
+    <p id="hover">悬停</p>
+    <button id="btn_show">显示</button>
+    <p id="p_show">显示</p>
+    <button id="btn_hide">隐藏</button>
+    <p id="p_hide">隐藏</p>
+    <button id="btn_toggle">反选</button>
+    <p id="p_toggle">反选</p>
+    <button id="fade">淡入淡出</button>
+    <p id="p_fadein">淡入</p>
+    <p id="p_fadeout">淡出</p>
+    <p id="p_fadetoggle">反选</p>
+    <p id="p_fadeto">指定的淡入淡出</p>
+    <button id="btn_slide">滑动效果</button>
+    <p id="p_slidedown" style="display: none;text-align: center;padding: 50px;border: solid 1px black">slidedown</p>
+    <p id="p_slideup" style="text-align: center;padding: 50px;border: solid 1px black">本来显示给自己收起来了slideup</p>
+    <p id="p_slidetoggle" style="display: none;text-align: center;padding: 50px;border: solid 1px black">slidetoggle</p>
+    <button id="btn_animate">动画</button>
+    <p id="p_animate" style="position: relative; width: 70px;background-color: aquamarine;border: solid 1px black;">默认情况下，所有 HTML 元素都有一个静态位置，且无法移动。
+            如需对位置进行操作，要记得首先把元素的 CSS position 属性设置为 relative、fixed 或 absolute！</p>
+    <button id="btn_stop">停止动画</button>
+    <button id="btn_chaining">链接</button>
+    <p id="p_chaining" style="height: 50px; width: 50px;text-align: center;background-color: aqua;border: solid 1px black;">链接</p>
+</body>
+</html>

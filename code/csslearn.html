@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <!-- 外链css    -->
+    <link rel="stylesheet" href="./jl.css">
+    <!-- 内部样式表 -->
+    <style>
+      body{
+          background-image: url("../img/img11.jpg");
+          background-repeat: no-repeat;
+          background-attachment: scroll;
+          font-size: 100%;
+      }
+      /* 未访问的链接的样式 */
+      .sa:link{
+          color: rgb(81, 90, 216);
+      }
+      /* 已经访问过的链接 */
+      .sa:visited{
+          color:black;
+      }
+      /* 鼠标放上去的时候 */
+      .sa:hover{
+          color: red;
+      }
+      /* 被点击的那一刻 */
+      .sa:active{
+          color: green;
+      }
+      .sa{
+          /* 删除下划线 */
+          text-decoration: none;
+          background-color: aquamarine;
+      }
+    </style>
+</head>
+<body id="mbody">
+    <p class="maintitle">xx</p>
+    <!-- 内连样式表 -->
+    <p class="neilian" style="color: seagreen">xx</p>
+    <!-- color -->
+    <p style="background-color: sienna">xx</p>
+    <p style="background-color: #1111aa">xx</p>
+    <p style="background-color: rgb(122, 122, 133)">xx</p>
+
+    <h1>backage</h1>
+    <p style="background-color: red">xx</p>
+
+    <p style="background-image:url('../img/img11.jpg')">用图片默认会平铺</p>
+
+    <p style="background-image:url('../img/img11.jpg');background-repeat: repeat-x">x方向上平铺</p>
+
+    <p style="background-image:url('../img/img11.jpg');background-repeat: repeat-y">y方向上你平铺</p>
+
+    <p style="background-image:url('../img/img11.jpg');background-repeat: no-repeat">不平铺</p>
+
+    <p style=
+    "background-image:url('../img/img11.jpg');
+    background-repeat: no-repeat;
+    background-position: right top;
+    height: 50px;
+    background-color: black;
+    color: white;
+    ">制定背景图的位置</p>
+    <p style="background: white url('../img/img11.jpg') no-repeat right top">background的简写方法，顺序不能改变</p>
+    <script>
+            var imgpath = "../img/img11.jpg"
+            function bodyScroll(){
+                // document.getElementById("mbody").style.backgroudAttachment="scroll"
+                // document.getElementById("mbody").style.backgroundColor="red"?
+
+                console.log("click scrll")
+            }
+            function bodyfixed(){
+                // document.getElementById("mbody").style.backgroudAttachment="fixed";
+                // document.getElementById("mbody").style.backgroundImage=imgpath
+                // document.getElementById("mbody").style.backgroundRepeat="no-repeat"
+                console.log("click fixed")
+            }
+        </script>
+    <div>
+        <p style="background-color: red">实验证明不能改background-attachment</br>但是原本没有的css也可以添加</p>
+        <p>background-attachment北京图片是否随着内容滚动</p>
+        <p>1.scroll随动</p>
+        <p>2.fixed不随动</p>
+        <p>3.inherit从父继承</p>
+        <button onclick="bodyScroll()">scroll</button>
+        <button onclick="bodyfixed()">fixed</button>
+    </div>
+    
+    <h1>文本</h1>
+    <h2 style="width: 200px;text-align: right">文本对齐</h2>
+    <p>justify左右两边始终对其，可以拉以下浏览器来看到下面文字的变化</p>
+    <p style="text-align: justify">当我年轻的时候，我梦想改变这个世界；当我成熟以后，我发现我不能够改变这个世界，我将目光缩短了些，决定只改变我的国家；当我进入暮年以后，我发现我不能够改变我们的国家，我的最后愿望仅仅是改变一下我的家庭，但是，这也不可能。当我现在躺在床上，行将就木时，我突然意识到：如果一开始我仅仅去改变我自己，然后，我可能改变我的家庭；在家人的帮助和鼓励下，我可能为国家做一些事情；然后，谁知道呢?我甚至可能改变这个世界。</p>
+    <h2 style="text-decoration: none;">文本修饰 textdecoration</h2>
+    <p>none用来去掉修饰，比如下划线啥的</p>
+    <p style="text-decoration: overline">overline</p>
+    <p style="text-decoration: line-through">line-through</p>
+    <p style="text-decoration: underline">underline</p>
+    <h2>文本转换</h2>
+    <p>用来将可以做大小写的</p>
+    <p style="text-transform: uppercase">uppercase全大写</p>
+    <p style="text-transform: lowercase">uppercase全小写</p>    
+    <p style="text-transform: capitalize">uppercase首字母大写</p>    
+    <h2>文本缩紧</h2>
+    <p style="text-indent: 50px">只能第一行缩紧只能第一行缩紧只能第一行缩紧只能第一行缩紧只能第一行缩紧只能第一行缩紧只能第一行缩紧只能第一行缩紧只能第一行缩紧只能第一行缩紧</p>
+    <h1>字体</h1>
+    <h2 style="font-family: 'Times New Roman', Times, serif">设置字体 font-family</h2>
+    <h2 style="font-style: normal">字体样式</h2>
+    <p style="font-style: italic">斜体</p>
+    <h2 style="font-size: 25px">字体大小font-size</h2>
+    <p style="font-size: 1.9em">w3c建议用em来控制字体的大小，因为ie浏览器无法调整文本,1em = 16px,可以用小数点</p>
+    <p>仍然是IE浏览器的问题。调整文本的大小时，会比正常的尺寸更大或更小。</p>
+    <p>在所有浏览器的解决方案中，设置 body元素的默认字体大小的是百分比：</p>
+    <h1>链接样式</h1>
+    <a href="http://www.baidu.com">默认的链接样式</a>
+    <a href="http://www.baidu.com" class="sa">默认的链接样式</a>
+    <h1>列表样式</h1>
+    <p>默认有序列表</p>
+    <ol>
+        <li>coffee</li>
+        <li>sleep</li>
+        <li>crazy</li>
+    </ol>
+    <p>默认无序列表</p>
+    <ul>
+        <li>coffee</li>
+        <li>sleep</li>
+        <li>crazy</li>
+    </ul>
+    <p>改一下有序前面</p>
+    <ol style="list-style-type: upper-roman;">
+            <li>coffee</li>
+            <li>sleep</li>
+            <li>crazy</li>
+    </ol>
+    <p>改一下无序</p>
+    <ul style="list-style-type: square;">
+            <li>coffee</li>
+            <li>sleep</li>
+            <li>crazy</li>
+    </ul>
+    <p>还可以用图片</p>
+    <ul style="list-style-image: url('../img/img11.jpg')">
+            <li>coffee</li>
+            <li>sleep</li>
+            <li>crazy</li>
+    </ul>
+    <p>前面放图片的这种方式在所有浏览器中显示并不相同，IE和Opera显示图像标记比火狐，Chrome和Safari更高一点点。</p>
+    <p>解决办法是</p>
+    <p>ul
+        {   
+                list-style-type: none;
+                padding: 0px;
+                margin: 0px;
+            }
+            ul li
+            {
+                background-image: url(sqpurple.gif);
+                background-repeat: no-repeat;
+                background-position: 0px 5px; 
+                padding-left: 14px; 
+            }
+    </p>
+    <p>有简写</p>
+    <ul style="list-style: square url('../img/img11.jpg')">
+        <li>coffee</li>
+        <li>sleep</li>
+        <li>crazy</li>
+    </ul>
+    <div style="width: 50px;background-color: red;height: 10px;"></div>
+
+    <div style="width: 50px;background-color: aqua;padding: 10px;height: 10px;margin-top: 20px"></div>
+    <p style="background-color: red">outline虽然是边框但是不会产生宽度，他会覆盖在相邻的元素上</p>
+    <div style="width: 50px;background-color: aqua;height: 10px;outline-width: 100px;outline-color: blue;outline-style: dashed;"></div>
+    
+</body>
+</html>

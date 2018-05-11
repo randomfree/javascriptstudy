@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>ajax</title>
+    <script>
+        function http(){
+            var xmlHttp;
+            if(window.XMLHttpRequest){
+                xmlHttp = new XMLHttpRequest();
+            }else{
+                xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlHttp.open("GET","http://127.0.0.1:8080",true);
+            xmlHttp.send();
+            console.log("click");
+            xmlHttp.onreadystatechange = function(){
+                if(xmlHttp.readyState==4&&xmlHttp.status==200){
+                    document.getElementById("content").innerHTML = xmlHttp.responseText;
+                }
+            }
+
+
+        };
+   
+    </script>
+
+</head>
+<body>
+    <button onclick="http()">http</button>
+
+    <div id="content"></div>
+</body>
+</html>
