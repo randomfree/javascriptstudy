@@ -6,11 +6,90 @@
 
     <title>简历练习</title>
 
+    <style>
+      
+        strong {
 
+            font-weight: bold;
+        }
+
+        dt,
+        dd {
+            margin-left: 30px;
+            display: inline;
+        }
+
+        dd {
+            margin-left: 5px;
+        }
+
+        dt:first-child {
+            margin-left: 0px;
+        }
+
+        .clearfloat {
+            clear: both;
+        }
+
+        p {
+            margin-top: 0px;
+
+        }
+
+        h3 {
+            margin: 0px;
+        }
+
+        h1 {
+            float: left;
+            color: white;
+            background-color: aqua;
+            padding-top: 5%;
+            text-align: center;
+        }
+        .content{
+            float: left;
+            margin-left: 3%;
+            margin-top: 2%;
+        }
+
+    </style>
 </head>
 
 <body>
+    <h1>个人信息</h1>
+    <div class="content">
+        <h2>基本信息</h2>
 
+        <dl>
+            <dt>姓名</dt>
+            <dd>小明</dd>
+            <dt>姓名</dt>
+            <dd>小明</dd>
+            <dt>姓名</dt>
+            <dd>小明</dd>
+        </dl>
+        <div class="clearfloat"></div>
+        <h2>联系方式</h2>
+        <dl>
+            <dt>手机</dt>
+            <dd>13000000000</dd>
+            <dt>Email</dt>
+            <dd>
+                <a href="xxxxx@qq.com">xxxxx@qq.com</a>
+            </dd>
+            <dt>个人主页</dt>
+            <dd>
+                <a href="github.com">github</a>
+            </dd>
+        </dl>
+        <div class="clearfloat"></div>
+        <h2>能力描述</h2>
+        <h3>技术能力</h3>
+        <p>啥也不会</p>
+        <h3>综合能力</h3>
+        <p>好吃懒做</p>
+    </div>
 </body>
 
 </html>
