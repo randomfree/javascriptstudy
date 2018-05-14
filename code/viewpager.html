@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+
+    <title>dialog</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .selected {
+            background-color: brown;
+            color: white;
+        }
+
+        .unselected {
+            background-color: red;
+            color: white;
+        }
+
+        li {
+            float: left;
+            display: inline-block;
+            width: 100px;
+
+            line-height: 80px;
+            list-style-type: none;
+            text-align: center
+        }
+
+        ul {
+            width: 100%;
+        }
+
+
+
+        .active_panels {
+            z-index: 1;
+        }
+
+        .hide_pandels {
+            z-index: 0;
+        }
+
+        .panels {
+           width: 300px;
+           height: 300px;
+        }
+        article{
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            background-color: brown;
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <div>
+        <ul>
+            <li class="selected">tab1</li>
+            <li class="unselected">tab2</li>
+            <li class="unselected">tab3</li>
+        </ul>
+
+    </div>
+    <div style="clear: both;"></div>
+    <div class="panels">
+        <article class="active_panels">
+            tab1
+        </article>
+        <article class="hide_pandels">
+            tab2
+        </article>
+        <article class="hide_pandels">
+            tab3
+        </article>
+    </div>
+
+    <script>
+        var tabs = document.querySelectorAll('li');
+        var panels = document.querySelectorAll('article');
+
+        for(i = 0;i<tabs.length;i++){
+           setOnclick(i);
+        }
+        
+        function setOnclick(i){
+            tabs[i].onclick = function(){
+                for(j = 0;j<tabs.length;j++){
+                    tabs[j].className = 'unselected';
+                    panels[j].className = 'hide_pandels';
+                }
+                tabs[i].className = "selected";
+                panels[i].className = "active_panels";
+            }
+
+        }
+    </script>
+</body>
+
+</html>
