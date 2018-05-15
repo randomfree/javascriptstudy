@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Page Title</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0px;
+            font-size: 0px;
+
+        }
+
+        hr {
+            margin-top: 20px;
+            clear: both;
+        }
+        h2{
+            font-size: 16px;
+        }
+        h3{
+            font-size: 12px;
+            margin-top: 40px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h2>float</h1>
+    <hr>
+    <div>
+        <div style="float: left;width: 30%;background-color:red;height: 20px;"></div>
+        <div style="float: left;width: 70%;background-color:green;height: 20px;"></div>
+    </div>
+    <hr style="clear: both;">
+    <div>
+        <div style="position: absolute;width: 30%;height: 20px;background-color: red;"></div>
+        <div style="position: absolute;width: 70%;height: 20px;background-color: green;margin-left: 30%"></div>
+    </div>
+    <hr>
+    <div style="display: flex;margin-top: 20px;">
+        <div style="flex: 3;height:20px;background-color: red;"></div>
+        <div style="flex: 7;height:20px;background-color: green;"></div>
+    </div>
+    <hr>
+    <h2>左侧固定，右边自适应</h2>
+    <h3>双inline-block</h3>
+    <div style="width:100px;height: 20px;background-color: red;display: inline-block;vertical-align: top;"></div>
+    <div style="width:calc(100% - 110px);height: 20px;background-color: green;display: inline-block;vertical-align: top;border: solid 5px black;"></div>
+    <hr>
+    <h3>双 float</h3>
+    <div style="height: 20px;background-color: red;width: 100px;float: left;"></div>
+    <div style="height: 20px;background-color: green;width: calc(100% - 110px);float: left;border: solid 5px black;"></div>
+    <hr>
+    <h3>flex</h3>
+    <div style="display: flex">
+        <div style="height: 20px;background-color: red;width: 100px;"></div>
+        <div style="height: 20px;background-color: green;width: 100px;flex: 1;border: solid 5px black;"></div>
+    </div>
+    <h3>position absolute</h3>
+    <div style="height: 20px;background-color: red;width: 100px;position: absolute;"></div>
+    <div style="height: 20px;background-color: green;width: calc(100% - 110px);border: solid 5px black;position: absolute;left: 100px;"></div>
+    <hr>
+    <h2>右侧固定左侧随动</h2>
+    <h3>双float</h3>
+    <div style="height: 20px;background-color: red;width: calc(100% - 110px);border: solid 5px black;float: left;"></div>
+    <div style="height: 20px;background-color: green;width:100px;float: left;"></div>
+    <hr>
+    <h3>position</h3>
+    <div style="height: 20px;background-color: red;width: calc(100% - 110px);border: solid 5px black;position: absolute;"></div>
+    <div style="height: 20px;background-color: green;width:100px;position: absolute;left: calc(100% - 100px)"></div>
+    <hr>
+    <h3>flex</h3>
+    <div style="display: flex">
+        <div style="height: 20px;background-color: red;width: calc(100% - 110px);border: solid 5px black;flex: 1;"></div>
+        <div style="height: 20px;background-color: green;width:100px;"></div>
+    </div>
+    <h2>左右固定中间自适应</h2>
+    <h3>float</h3>
+    <div style="height: 20px;background-color: red;width: 100px;float: left;"></div>
+    <div style="height: 20px;background-color: green;width:calc(100% - 200px);float: left;"></div>
+    <div style="height: 20px;background-color: blue;width:100px;float: left;"></div>
+    <hr>
+    <h3>position absolute</h3>
+    <div style="height: 20px;background-color: red;width: 100px;position: absolute;"></div>
+    <div style="height: 20px;background-color: green;width:calc(100% - 200px);position: absolute;left: 100px;"></div>
+    <div style="height: 20px;background-color: blue;width:100px;position: absolute;left: calc(100% - 100px)"></div>
+    <hr>
+    <h3>flex</h3>
+    <div style="display: flex;">
+        <div style="height: 20px;background-color: red;width: 100px;"></div>
+        <div style="height: 20px;background-color: green;width:calc(100% - 200px);flex: 1;"></div>
+        <div style="height: 20px;background-color: blue;width:100px;"></div>
+    </div>
+</body>
+
+</html>
