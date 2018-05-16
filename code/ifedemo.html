@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>lfe练习</title>
+
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        header {
+            background-color: rgb(51, 51, 51);
+            height: 50px;
+            display: flex;
+            flex-flow: row wap;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
+        header a {
+            color: white;
+        }
+
+        header a:first-of-type {
+
+            align-self: center;
+            margin-left: 50px;
+
+        }
+
+        header div:first-of-type {
+            flex: 1;
+        }
+
+        header a:nth-of-type(2),
+        a:nth-of-type(3),
+        a:nth-of-type(4) {
+            margin: 5px;
+            font-size: 10px;
+        }
+
+        header a:nth-of-type(4) {
+            margin-right: 50px;
+        }
+
+        .banner {
+            background-color: rgb(105, 185, 61);
+            height: 200px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+        }
+
+        .banner button {
+            height: 30px;
+            border: solid 1px black;
+            margin: 5px 2px;
+            color: rgb(96, 127, 78);
+            background-color: rgb(179, 220, 156);
+        }
+
+        .banner button:nth-of-type(2) {
+            height: 45px;
+        }
+
+        .banner button:nth-of-type(4) {
+            margin-right: 70px;
+        }
+
+        .tabs {
+            height: 50px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-end;
+            z-index: 1;
+        }
+
+        .tabs button {
+
+            height: 40px;
+            width: 100px;
+            margin: 0px;
+            border: solid 1px rgb(240, 240, 240);
+            border-bottom: solid 1px rgb(230, 230, 230);
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            background-color: rgb(238, 238, 238);
+        }
+
+        .tabs button:nth-of-type(1) {
+            margin-left: 150px;
+            background-color: white;
+            border-bottom: none;
+            border-color: rgb(235, 235, 235);
+        }
+
+        hr {
+            margin: 0px;
+            padding: 0px;
+            margin-top: -1px;
+            border: none;
+            border-top: solid 1px rgb(235, 235, 235);
+        }
+
+        .content {
+            display: flex;
+            flex-flow: row wrap;
+            height: 480px;
+            margin: 0 auto;
+            margin-top: 10px;
+            width: 960px;
+        }
+        .content div{
+            display: flex;
+            width: 100%;
+        }
+        .content div article {
+            box-sizing: border-box;
+            border: solid 1px black;
+            margin: 5px;
+            padding: 80px;
+            height: 150px;
+            text-align: center;
+            justify-content: center;
+            flex: 1;
+        }
+
+        .content article:nth-of-type(4),
+        .content article:nth-of-type(5),
+        .content article:nth-of-type(6),
+        .content article:nth-of-type(7) {
+            width: 200px;
+        }
+
+        footer{
+            clear: both;
+            background-color: rgb(102, 102, 102);
+            height: 100px;
+            text-align: center;
+            color: white;
+            margin-top: 50px;
+            padding-top: 10px;
+            font-size: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="http://www.baidu.com">Logo</a>
+        <div></div>
+        <a href="">Github</a>
+        <a href="">Register</a>
+        <a href="">Login</a>
+    </header>
+    <section class="banner">
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
+    </section>
+    <section class="main">
+        <div class="tabs">
+            <button>HOME</button>
+            <button>PROFILE</button>
+            <button>ABOUT</button>
+        </div>
+        <hr>
+        <div class="content">
+            <div>
+                <article>Content 1</article>
+                <article>Content 2</article>
+                <article>Content 3</article>
+            </div>
+            <div>
+                <article>Content 4</article>
+                <article>Content 5</article>
+                <article>Content 6</article>
+                <article>Content 7</article>
+            </div>
+            <div>
+                <article>Content 8</article>
+                <article>Content 9</article>
+                <article>Content 10</article>
+            </div>
+        </div>
+    </section>
+    <footer>©2018 ife.baidu.com</footer>
+
+</body>
+
+</html>
