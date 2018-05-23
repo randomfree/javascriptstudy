@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>IFE ECMAScript</title>
+    <script>
+         var result = new Array();
+        function bclick() {
+            var num = document.getElementById('dec-number').value;
+            console.log(num);
+            result.splice(0,result.length);
+            document.getElementById("result").innerHTML = "";
+            console.log(result);
+            dec2bin(num);
+        }
+        function dec2bin(decNumber) {
+            // 在这里实现你的转化方法，注意需要判断输入必须为一个非负整数
+            if (decNumber > 0 && parseInt(decNumber) == decNumber) {
+                var num =  parseInt(decNumber / 2);
+                var yushu = decNumber % 2;
+                result.unshift(yushu);
+             
+                if (num == 0) {
+                    document.getElementById("result").innerHTML = result;
+                }else{
+                    dec2bin(num);
+                }
+               
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <input id="dec-number" type="number" placeholder="输入一个十进制非负整数">
+    <button id="trans-btn" onclick="bclick()">转化为二进制</button>
+    <p id="result">运算结果</p>
+   
+</body>
+
+</html>
