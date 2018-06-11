@@ -12,9 +12,9 @@
             result.splice(0,result.length);
             document.getElementById("result").innerHTML = "";
             console.log(result);
-            dec2bin(num);
+            dec2bin(num,5);
         }
-        function dec2bin(decNumber) {
+        function dec2bin(decNumber,binbit) {
             // 在这里实现你的转化方法，注意需要判断输入必须为一个非负整数
             if (decNumber > 0 && parseInt(decNumber) == decNumber) {
                 var num =  parseInt(decNumber / 2);
@@ -22,9 +22,16 @@
                 result.unshift(yushu);
              
                 if (num == 0) {
+                    if(result.length<binbit){
+                        for(var i = 0;i<binbit-result.length;i++){
+                            result.unshift(0);
+                        }
+                    }else{
+                        console.error("some coding");
+                    }
                     document.getElementById("result").innerHTML = result;
                 }else{
-                    dec2bin(num);
+                    dec2bin(num,binbit);
                 }
                
             }
